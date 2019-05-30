@@ -107,7 +107,7 @@ game_hash = {
     }
   }
 
-end 
+end
 
 
 def num_points_scored(player_name)
@@ -116,7 +116,7 @@ playerpoints = 0
   stats[:players].collect do |player, data|
 
     if player == player_name
-      playerpoints += data[:points]
+      playerpoints == data[:points]
     end
   end
  end
