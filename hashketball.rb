@@ -135,43 +135,43 @@ end
 def shoe_size(name)
   find_shoe = players.find {|player| player.fetch(:player_name) == name }
   find_shoe.fetch(:shoe)
-end 
+end
 
 shoe_size("Ben Gordon")
 
-def team_stats 
+def team_stats
   home_team = game_hash.values_at(:home)
   away_team = game_hash.values_at(:away)
   total_team_stats = home_team + away_team
   total_team_stats
-end 
-team_stats 
+end
+team_stats
 
 def team_colors(team_name)
   find_team = team_stats.find {|team| team.fetch(:team_name) == team_name}
   find_team.fetch(:colors)
-end 
+end
 team_colors("Brooklyn Nets")
 
-def team_names 
+def team_names
   team_stats.collect do |team|
     team[:team_name]
-  end 
-end 
-team_names 
+  end
+end
+team_names
 
 def player_numbers(team_name)
   find_numbers = team_stats.find {|team| team.fetch(:team_name) == team_name}
-  find_numbers[:players].collect do |player| 
+  find_numbers[:players].collect do |player|
     player[:number]
-  end 
-end 
+  end
+end
 player_numbers("Brooklyn Nets")
 
 # def player_stats(name)
 #   stats = players.find {|stat| stat.fetch(:player_name) == name}
 #   stats
-# end 
+# end
 
 def player_stats(player_name)
  stats= players.find {|player| player.fetch(:player_name) == player_name}
