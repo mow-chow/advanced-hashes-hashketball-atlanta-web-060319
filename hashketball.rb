@@ -159,13 +159,19 @@ def team_names
   return teams
 end
 
-def player_numbers(team_name)
-  players = teams[team_name][:players]
-  players.map do |name, data|
-    data[:number]
-  end
-end
+def players_numbers(name_of_team)
 
+  numbers = []
+  game_hash.each do |team, chars|
+    if name_of_team == game_hash[team][:team_name]
+      game_hash[team][:players].each do |name, stats|
+        numbers.push(stats[:number])
+      end
+    end
+  end
+  return numbers
+  
+end
 
 # def player_stats(name)
 #   stats = players.find {|stat| stat.fetch(:player_name) == name}
