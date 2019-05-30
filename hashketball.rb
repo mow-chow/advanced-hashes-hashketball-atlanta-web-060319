@@ -172,3 +172,11 @@ def player_numbers(name_of_team)
   return numbers
 
 end
+
+def player_stats(name)
+  
+end
+
+def big_shoe_rebounds
+  
+end
