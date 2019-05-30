@@ -120,12 +120,15 @@ end
 
  # Takes in an argument of a player's name
 # and returns the number of points scored for that player
-def num_points_scored(player_n)
-  game_hash.each do |location, team|
-    team.each do |attribute, data|
-      if data == player_n
-      return game_hash[location][attribute][player_n][:points]
+def players
+  home_players = game_hash[:home][:players]
+  away_players = game_hash[:away][:players]
+  total_players = home_players.merge(away_players)
+ 
 end
-end
-end
-end
+
+def num_points_scored(name)
+  players[name][:points]
+end 
+
+
