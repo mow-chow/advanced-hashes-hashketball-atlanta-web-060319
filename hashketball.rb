@@ -118,14 +118,16 @@ def game_hash
 end
 
 
- # Takes in an argument of a player's name
-# and returns the number of points scored for that player
-def num_points_scored(player_n)
-  game_hash.each do |location, team|
-    team.each do |attribute, data|
-      if data == player_n
-      return game_hash[location][attribute][player_n][:points]
-end
-end
-end
+
+def num_points_scored(player_name)
+playerpoints = 0
+ game_hash.collect do |team, stats|
+  stats[:players].collect do |player, data|
+
+    if player == player_name
+      playerpoints += data[:points]
+    end
+  end
+ end
+ playerpoints
 end
