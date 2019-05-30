@@ -179,5 +179,7 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
-
+  player = players.max_by do |name, data|
+    data[:shoe]
 end
+rebounds = player[1][:rebounds]
