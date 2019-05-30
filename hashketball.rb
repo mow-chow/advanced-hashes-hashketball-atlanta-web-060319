@@ -174,6 +174,7 @@ def player_numbers(name_of_team)
 end
 
 def player_stats(name)
+  players[player_name]
 
 end
 
