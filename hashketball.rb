@@ -157,7 +157,9 @@ end
 
 
 def player_numbers(team_name)
-  players = teams[team_name]
+  players = teams[team_name][:players]
+  players.each do |name, data|
+    data[:number]
   end
 end
 
