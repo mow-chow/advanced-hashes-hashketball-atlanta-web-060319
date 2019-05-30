@@ -189,8 +189,3 @@ def big_shoe_rebounds
 #   stats = players.find {|stat| stat.fetch(:player_name) == name}
 #   stats
 # end
-
-def player_stats(player_name)
- stats= players.find {|player| player.fetch(:player_name) == player_name}
-  stats.delete_if {|info, string| info == :player_name}
-end
