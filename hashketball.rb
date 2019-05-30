@@ -173,6 +173,18 @@ def player_numbers(name_of_team)
 
 end
 
+def big_shoe_rebounds
+  names = []
+  shoe_sizes = []
+
+  game_hash.each do |team, chars|
+    game_hash[team][:players].each do |name,stats|
+      names.push(name)
+      shoe_sizes.push(stats[:shoe])
+    end
+  end
+
+
 # def player_stats(name)
 #   stats = players.find {|stat| stat.fetch(:player_name) == name}
 #   stats
